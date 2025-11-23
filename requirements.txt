@@ -1,6 +1,6 @@
 flask
 gunicorn
-tensorflow==2.18.0
+tensorflow==2.19.0
 pillow
 numpy
 opencv-python-headless
