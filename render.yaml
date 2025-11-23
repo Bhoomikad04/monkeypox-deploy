@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: monkeypox-classifier
+    env: docker
+    branch: main
+    plan: starter
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    startCommand: "/app/start.sh"
+    envVars:
+      - key: MODEL_URL
+        fromSecret: MODEL_URL
+      - key: MODEL_DIR
+        value: /app/model
+    autoDeploy: true
+    healthChecksPath: /
+    minInstances: 1
+    maxInstances: 4
